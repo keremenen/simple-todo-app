@@ -1,5 +1,6 @@
 import { useState } from "react"
-import TaskList from "./components/taskList/taskList"
+import TaskList from "./components/TaskList"
+import AddForm from "./components/AddForm"
 
 const temporaryTodos = [
   {
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <div className="todo-app">
+      <AddForm addTodo={handleAdd} />
       <TaskList
         todos={todos}
         deleteTodo={handleDelete}

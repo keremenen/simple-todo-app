@@ -1,4 +1,4 @@
-import SingleTask from "../singleTask/SingleTask"
+import SingleTask from "../SingleTask"
 import PropTypes from 'prop-types'
 
 const TaskList = ({ todos, deleteTodo, toggleTodo }) => {
