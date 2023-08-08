@@ -8,7 +8,8 @@ export const AddForm = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    if (newTask === '') return
+    addTodo(newTask)
 
   }
 
@@ -21,7 +22,6 @@ export const AddForm = ({ addTodo }) => {
       />
       <Button
         text={'Add new task'}
-        callback={() => addTodo()}
       />
     </form>
   )
