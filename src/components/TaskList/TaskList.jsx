@@ -1,7 +1,7 @@
 import SingleTask from "../singleTask/SingleTask"
 import PropTypes from 'prop-types'
 
-const TaskList = ({ todos }) => {
+const TaskList = ({ todos, deleteTodo }) => {
   return (
     <ul>
       {todos ?
@@ -10,6 +10,7 @@ const TaskList = ({ todos }) => {
             id={todo.id}
             title={todo.title}
             key={todo.id}
+            deleteTodo={deleteTodo}
           />
         ))
         :
@@ -20,7 +21,8 @@ const TaskList = ({ todos }) => {
 }
 
 TaskList.propTypes = {
-  todos: PropTypes.array
+  todos: PropTypes.array,
+  deleteTodo: PropTypes.func,
 }
 
 export default TaskList

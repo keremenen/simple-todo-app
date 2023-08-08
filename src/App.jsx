@@ -15,9 +15,15 @@ const temporaryTodos = [
 function App() {
   const [todos, setTodos] = useState(temporaryTodos)
 
+  const handleDelete = (id) => {
+    setTodos(prevState => {
+      return prevState.filter(task => task.id !== id)
+    })
+  }
+
   return (
     <div className="todo-app">
-      <TaskList todos={todos} />
+      <TaskList todos={todos} deleteTodo={handleDelete} />
     </div>
   )
 }

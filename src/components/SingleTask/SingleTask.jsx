@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
 import Button from '../Button'
 
-export const SingleTask = ({ id, title }) => {
+export const SingleTask = ({ id, title, deleteTodo }) => {
   return (
     <li id={id}>
       <span>{title}</span>
       <Button
         text={'Delete'}
-        callback={() => console.log('Button clicked!')}
+        callback={() => deleteTodo(id)}
       />
     </li>
   )
@@ -16,6 +16,7 @@ export const SingleTask = ({ id, title }) => {
 SingleTask.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
+  deleteTodo: PropTypes.func,
 }
 
 export default SingleTask
