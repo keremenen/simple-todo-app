@@ -4,10 +4,14 @@ import styles from './SingleTask.module.css'
 
 export const SingleTask = ({ id, title, deleteTodo, toggleTodo, checked }) => {
   return (
-    <li id={id} className={styles.wrapper} >
+    <li id={id} className={styles.wrapper} onClick={() => toggleTodo(id, checked)}>
       <input type='checkbox' checked={checked} onChange={() => toggleTodo(id, checked)} />
-      <span>{title}</span>
+      <div className={styles.text}>
+        <span className={checked ? styles.checked : ''}>{title}</span><br />
+        <span>Data:</span>
+      </div>
       <Button
+        className={styles.delete}
         text={'Delete'}
         callback={() => deleteTodo(id)}
       />
