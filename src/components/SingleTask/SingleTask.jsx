@@ -4,7 +4,7 @@ import Button from '../Button'
 export const SingleTask = ({ id, title, deleteTodo, toggleTodo, checked }) => {
   return (
     <li id={id}>
-      <input type='checkbox' checked={checked} onClick={() => toggleTodo(id, checked)} />
+      <input type='checkbox' checked={checked} onChange={() => toggleTodo(id, checked)} />
       <span>{title}</span>
       <Button
         text={'Delete'}
