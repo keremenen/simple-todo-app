@@ -32,6 +32,12 @@ function App() {
     })
   }
 
+  const handleAdd = (title) => {
+    setTodos(prevState => {
+      return [...prevState, { title: title, id: Math.floor(Math.random() * 1000), checked: false }]
+    })
+  }
+
   return (
     <div className="todo-app">
       <TaskList
