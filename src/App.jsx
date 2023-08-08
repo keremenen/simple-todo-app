@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="todo-app">
-      <TaskList todos={temporaryTodos} />
+      <TaskList todos={todos} />
     </div>
   )
 }
