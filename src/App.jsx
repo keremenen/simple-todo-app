@@ -1,4 +1,5 @@
 import { useState } from "react"
+import TaskList from "./components/taskList/taskList"
 
 const temporaryTodos = [
   {
@@ -16,11 +17,7 @@ function App() {
 
   return (
     <div className="todo-app">
-      {todos && todos.map(todo => (
-        <li key={todo.id}>
-          <span>{todo.title}</span>
-        </li>
-      ))}
+      <TaskList todos={temporaryTodos} />
     </div>
   )
 }
