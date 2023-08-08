@@ -11,7 +11,7 @@ export const AddForm = ({ addTodo }) => {
     e.preventDefault()
     if (newTask === '') return
     addTodo(newTask)
-
+    setNewTask('')
   }
 
   return (
