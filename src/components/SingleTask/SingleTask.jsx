@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types'
 import Button from '../Button'
+import styles from './SingleTask.module.css'
 
 export const SingleTask = ({ id, title, deleteTodo, toggleTodo, checked }) => {
   return (
-    <li id={id}>
+    <li id={id} className={styles.wrapper} >
       <input type='checkbox' checked={checked} onChange={() => toggleTodo(id, checked)} />
       <span>{title}</span>
       <Button
         text={'Delete'}
         callback={() => deleteTodo(id)}
       />
-    </li>
+    </li >
   )
 }
 

@@ -1,0 +1,17 @@
+.wrapper{
+	list-style-type: none;
+
+	padding: 10px;
+	margin: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid transparent;
+	transition: 50ms border ease-in-out;
+	cursor: pointer;
+	border-radius: 5px;
+
+}
+.wrapper:hover{
+	border: 1px solid rgba(0, 112, 19);
+}

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './App.css'
 import TaskList from "./components/TaskList"
 import AddForm from "./components/AddForm"
 
@@ -35,7 +36,12 @@ function App() {
 
   const handleAdd = (title) => {
     setTodos(prevState => {
-      return [...prevState, { title: title, id: Math.floor(Math.random() * 1000), checked: false }]
+      return [...prevState, {
+        title: title,
+        id: Math.floor(Math.random() * 1000),
+        checked: false,
+        date: new Date()
+      }]
     })
   }
 

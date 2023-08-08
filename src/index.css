@@ -3,14 +3,10 @@
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #3b3b3b;
 }
-
-body {
+*, *::after, *::before{
+  box-sizing: border-box;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
