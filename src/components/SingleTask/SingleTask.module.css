@@ -1,0 +1,30 @@
+.wrapper{
+	list-style-type: none;
+	padding: 10px;
+	margin: 10px 20px;
+	display: flex;
+	align-items: center;
+	border: 1px solid transparent;
+	transition: 50ms border ease-in-out;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.wrapper:hover{
+	border: 1px solid rgba(0, 112, 19);
+}
+
+.text{
+	margin-left: 20px;
+}
+.checked{
+	text-decoration: line-through;
+	color: #ffffff38;
+}
+.delete{
+	margin-left: auto;
+	background-color: rgb(175, 9, 9);
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: #fff;
+}
