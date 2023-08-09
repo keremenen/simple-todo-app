@@ -1,23 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import './App.css'
 import TaskList from "./components/TaskList"
 import AddForm from "./components/AddForm"
 
-const temporaryTodos = [
-  {
-    title: 'Take out the garbage',
-    id: Math.floor(Math.random() * 1000),
-    checked: true,
-  },
-  {
-    title: 'Do shopping',
-    id: Math.floor(Math.random() * 1000),
-    checked: false,
-  },
-]
+
 
 function App() {
-  const [todos, setTodos] = useState(temporaryTodos)
+  const [todos, setTodos] = useState(() => {
+    const localData = localStorage.getItem('TASK-LIST')
+    if (!localData) return []
+    return JSON.parse(localData)
+  })
 
   const handleDelete = (id) => {
     setTodos(prevState => {
@@ -35,15 +28,20 @@ function App() {
   }
 
   const handleAdd = (title) => {
+    const currentDate = new Date()
     setTodos(prevState => {
       return [...prevState, {
         title: title,
         id: Math.floor(Math.random() * 1000),
         checked: false,
-        date: new Date()
+        date: `${currentDate.getHours()}:${currentDate.getMinutes()} ${currentDate.getDay()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`
       }]
     })
   }
+
+  useEffect(() => {
+    window.localStorage.setItem('TASK-LIST', JSON.stringify(todos))
+  }, [todos])
 
   return (
     <div className="todo-app">

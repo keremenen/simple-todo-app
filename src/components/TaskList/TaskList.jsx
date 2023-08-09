@@ -1,22 +1,21 @@
 import SingleTask from "../SingleTask"
 import PropTypes from 'prop-types'
+import styles from './TaskList.module.css'
 
 const TaskList = ({ todos, deleteTodo, toggleTodo }) => {
   return (
-    <ul>
-      {todos ?
+    <ul className={styles.taskListWrapper}>
+      {todos.length !== 0 ?
         todos.map(todo => (
           <SingleTask
-            id={todo.id}
-            title={todo.title}
-            checked={todo.checked}
+            todo={todo}
             key={todo.id}
             deleteTodo={deleteTodo}
             toggleTodo={toggleTodo}
           />
         ))
         :
-        <p>No data to display</p>
+        <p className={styles.info}>No data to display</p>
       }
     </ul>
   )
