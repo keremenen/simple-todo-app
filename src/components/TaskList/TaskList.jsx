@@ -8,9 +8,7 @@ const TaskList = ({ todos, deleteTodo, toggleTodo }) => {
       {todos.length !== 0 ?
         todos.map(todo => (
           <SingleTask
-            id={todo.id}
-            title={todo.title}
-            checked={todo.checked}
+            todo={todo}
             key={todo.id}
             deleteTodo={deleteTodo}
             toggleTodo={toggleTodo}

@@ -8,11 +8,13 @@ const temporaryTodos = [
     title: 'Take out the garbage',
     id: Math.floor(Math.random() * 1000),
     checked: true,
+    date: new Date(),
   },
   {
     title: 'Do shopping',
     id: Math.floor(Math.random() * 1000),
     checked: false,
+    date: new Date(),
   },
 ]
 
