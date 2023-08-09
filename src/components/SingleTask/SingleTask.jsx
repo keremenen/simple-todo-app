@@ -8,7 +8,7 @@ export const SingleTask = ({ todo: { id, title, checked, date }, toggleTodo, del
       <input type='checkbox' checked={checked} onChange={() => toggleTodo(id, checked)} />
       <div className={styles.text}>
         <span className={checked ? styles.checked : ''}>{title}</span><br />
-        <span className={styles.addedDate}>{date.getHours()}:{date.getMinutes()}, {date.getDay()}/{date.getMonth()}/{date.getFullYear()}</span>
+        <span className={styles.addedDate}>{date}</span>
       </div>
       <Button
         className={styles.delete}
