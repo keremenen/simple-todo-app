@@ -1,8 +1,8 @@
 .todo-app{
 	margin: 50px auto;
-	padding: 25px 0;
+	padding: 25px 0 15px 0;
 	max-width: 600px;
-	border-radius: 50px;
+	border-radius: 25px;
 	background: #3b3b3b;
 	box-shadow:  20px 20px 40px #323232,
 	-20px -20px 40px #444444;
